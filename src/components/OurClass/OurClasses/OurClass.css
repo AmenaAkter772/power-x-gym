@@ -1,0 +1,14 @@
+.cartStyle{
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    height: 380px;
+    width: 310px;
+    margin: 10px;
+}
+.textCardStyle{
+    background-color: #FCD842;
+    height: 60px;
+    width:90%;
+    margin-left: 15px;
+    margin-top: 300px;
+}

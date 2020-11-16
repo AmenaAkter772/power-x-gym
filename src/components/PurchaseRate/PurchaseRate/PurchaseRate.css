@@ -1,0 +1,23 @@
+.purchaseCard{
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    height: 530px;
+    width: 310px;
+    margin: 10px;
+}
+.textColor{
+    color: #FCD842;
+}
+.secondTextColor{
+    color: #FCD842;
+    font-size: 70px;
+}
+.button{
+    background-color: #FCD842;
+    width: 150px;
+    height: 50px;
+    margin-top: 8px;
+}
+.fontColor{
+    color: #FCD842;
+}
