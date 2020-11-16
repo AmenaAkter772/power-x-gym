@@ -6,12 +6,14 @@ import {
   Route
 } from "react-router-dom";
 import PurchaseRateInfo from './components/PurchaseRate/PurchaseRateInfo/PurchaseRateInfo';
+import PersonalDetails from './components/PersonalDetails/PersonalDetails';
 
 function App() {
   return (
     <div>
       <OurClassInfo></OurClassInfo>
       <PurchaseRateInfo></PurchaseRateInfo>
+      <PersonalDetails></PersonalDetails>
     </div>
   );
 }
