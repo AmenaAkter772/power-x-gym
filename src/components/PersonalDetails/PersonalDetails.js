@@ -1,12 +1,36 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 const PersonalDetails = () => {
-
+    const history = useHistory()
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('object');
+        const firstName = document.getElementById('firstName').value;
+        const email = document.getElementById('email').value;
+        const birthDate = document.getElementById('birthDate').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const lastName = document.getElementById('lastName').value;
+        const mobile = document.getElementById('mobile').value;
+        const gender = document.getElementById('gender').value;
+        const country = document.getElementById('country').value;
+        const postcode = document.getElementById('postcode').value;
+        const total = {firstName, email, birthDate, address, city, lastName, mobile, gender, country, postcode};
+        fetch('http://localhost:3000/' , {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(total)
+        })
+        .then(data => {
+            if (data){
+                history.push('/success')
+            }
+        })
     }
+
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
@@ -14,45 +38,45 @@ const PersonalDetails = () => {
                     <div className="col-md-6">
                         <Form.Group>
                             <label>First name</label><br/>
-                            <Form.Control type="text"  defaultValue='' id="firstName" />
+                            <Form.Control type="text"  defaultValue='' id="firstName" required />
                         </Form.Group>
                         <Form.Group>
                         <label>Email</label><br/>
-                            <Form.Control type="text" defaultValue='' id="email" />
+                            <Form.Control type="text" defaultValue='' id="email" required />
                         </Form.Group>
                         <Form.Group>
                         <label>date of birth</label><br/>
-                            <Form.Control type="date" defaultValue='' id="birthDate" />
+                            <Form.Control type="date" defaultValue='' id="birthDate" required />
                         </Form.Group>
                         <Form.Group>
                         <label>address line 1:</label><br/>
-                            <Form.Control type="text" defaultValue='' id="address" />
+                            <Form.Control type="text" defaultValue='' id="address" required />
                         </Form.Group>
                         <Form.Group>
                         <label>city</label><br/>
-                            <Form.Control type="text" defaultValue='' id="city" />
+                            <Form.Control type="text" defaultValue='' id="city" required />
                         </Form.Group>
                     </div>
                     <div className="col-md-6">
                     <Form.Group>
                         <label>Last Name</label><br/>
-                            <Form.Control type="text" defaultValue='' id="lastName" />
+                            <Form.Control type="text" defaultValue='' id="lastName" required />
                         </Form.Group>
                         <Form.Group>
                         <label>Mobile Number</label><br/>
-                            <Form.Control type="text" defaultValue='' id="mobile" />
+                            <Form.Control type="text" defaultValue='' id="mobile" required />
                         </Form.Group>
                         <Form.Group>
                         <label>Gender</label><br/>
-                            <Form.Control type="text" defaultValue='' id="gender" />
+                            <Form.Control type="text" defaultValue='' id="gender" required />
                         </Form.Group>
                         <Form.Group>
                         <label>Country/Region</label><br/>
-                            <Form.Control type="text" defaultValue='' id="country" />
+                            <Form.Control type="text" defaultValue='' id="country" required />
                         </Form.Group>
                         <Form.Group>
                         <label>Postcode</label><br/>
-                            <Form.Control type="text" defaultValue='' id="birthDate" />
+                            <Form.Control type="text" defaultValue='' id="postcode" required />
                         </Form.Group>
                     </div>
                 </div>
